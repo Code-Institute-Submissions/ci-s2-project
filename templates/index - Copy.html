@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Videogame Sales and Ratings</title>
+   <link rel="stylesheet" href="{{ url_for ('static',filename="font-awesome/css/font-awesome.min.css")}}" />
+   <link rel="stylesheet" href="{{ url_for ('static',filename="css/local.css")}}" />
+   <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/bootstrap.min.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/keen-dashboards.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css')}}">
+
+ </head>
+<body class="application">
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <div class="container-fluid">
+       <div class="navbar-header">
+           <a class="navbar-brand" href="./">Videogame Global Sales(in millions of units)</a>
+       </div>
+   </div>
+</div>
+
+
+<div  id="outer" class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Genres
+                </div>
+                <div class="chart-stage">
+                    <div id="genre-select" data-step="5" data-intro="Select Genre" style="font-weight: normal"
+                     data-position="right"></div>
+                </div>
+            </div>
+        </div>
+
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        Year of Release
+                    </div>
+                    <div class="chart-stage">
+                        <div id="year-select" data-step="5" data-intro="Select Year" style="font-weight: normal"
+                        data-position="right"></div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="chart-wrapper">
+                <div class="chart-title">
+                    Platforms
+                </div>
+                <div class="chart-stage">
+                    <div id="platform-select" data-step="5" data-intro="Select Platform" style="font-weight: normal"
+                     data-position="right"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <div class="row">
+       <div class="col-sm-6 col-md-6 col-lg-6">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Top 20 Publishers
+               </div>
+               <div class="chart-stage">
+                   <div id="sales-chart"></div>
+               </div>
+           </div>
+       </div>
+
+       <div class="col-sm-6 col-md-6 col-lg-6">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Top 20 Developers
+               </div>
+               <div class="chart-stage">
+                   <div id="developer-sales"></div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <div class="row">
+       <!-- Resources -->
+       <div class="col-lg-3">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Platforms
+               </div>
+               <div class="chart-stage">
+                   <div id="rating-chart"></div>
+               </div>
+           </div>
+       </div>
+       <!-- Resources -->
+               <!-- funding Pie -->
+       <div class="col-lg-12 col-md-12 col-sm-12">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Release Dates
+               </div>
+               <div class="chart-stage">
+                   <div id="time-chart"></div>
+               </div>
+           </div>
+       </div>
+    </div>
+
+   <div class="row">
+       <!-- menu select -->
+       <div class="col-sm-6">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   Japan Sales
+               </div>
+               <div class="chart-stage">
+                   <div id="JAS-number"></div>
+               </div>
+           </div>
+       </div>
+       <!-- menu select -->
+
+       <!-- Metric 1 -->
+       <div class="col-sm-2">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                 Global Sales
+               </div>
+               <div class="chart-stage" style=" background: #33CC99;
+                   position: relative;
+                   font-size: 29px;
+                   color: white;
+                   vertical-align: middle;
+                   text-align: center;
+                   padding-top: 12px;
+                   padding-bottom: 0px;">
+                   <div id="globalsales-number"></div>
+               </div>
+           </div>
+       </div>
+       <!-- Metric 1 -->
+
+       <!-- Metric 2 -->
+       <div class="col-sm-2">
+           <div class="chart-wrapper">
+               <div class="chart-title">
+                   North-America Sales
+               </div>
+               <div class="chart-stage">
+                   <div id="NASales-number"></div>
+               </div>
+           </div>
+       </div>
+       <!-- Metric 2 -->
+   </div>
+
+
+<hr>
+<p class="small text-muted"> Data viz &#9829; from Code Institute</p>
+
+
+<script src="{{ url_for ('static', filename='lib/js/jquery.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/crossfilter.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/d3.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/dc.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/queue.js')}}"></script>
+
+<script src="{{ url_for ('static', filename='lib/js/keen.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='js/graph.js')}}"></script>
+</body>
+</html>

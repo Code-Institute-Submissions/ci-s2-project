@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Videogame Sales Dashboard</title>
+   <link href="https://fonts.googleapis.com/css?family=Exo|Wendy+One" rel="stylesheet">
+       <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/keen-dashboards.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static',filename="font-awesome/css/font-awesome.min.css")}}" />
+   <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/bootstrap.min.css')}}">
+   <link rel="stylesheet" href="{{ url_for ('static',filename="lib/css/dc.css")}}" />
+   <link rel="stylesheet" href="{{ url_for ('static',filename="css/local.css")}}" />
+   <link rel="stylesheet" href="{{ url_for ('static',filename="css/custom.css")}}" />
+
+ </head>
+<body>
+    <div id="wrapper">
+          <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand customfontexo" href="">Videogame Sales Dashboard</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul id="active" class="nav navbar-nav side-nav">
+                    <li class="selectedi"><a href="" class="customfontexo"><i class="fa fa-bullseye"></i> Dashboard</a></li>
+                    <li><a href="portfolio.html" class="customfontexo"><i class="fa fa-tasks"></i> Projects</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right navbar-user">
+                    <li class="dropdown messages-dropdown">
+                        <a href="#" class="dropdown-toggle customfontWendy" data-toggle="dropdown"><i class="fa fa-envelope"></i>Contact <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header customfontexo">Contact me at:</li>
+                            <li class="message-preview">
+                                <a href="https://www.github.com/Markstyba">
+                                    <span class="avatar"><i class="fa fa-github"></i></span>
+                                    <span class="message customfontexo">Github</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="message-preview">
+                                <a href="https://www.instagram.com/mark.sttt/">
+                                    <span class="avatar"><i class="fa fa-instagram"></i></span>
+                                    <span class="message customfontexo">Instagram</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="message-preview">
+                                <a href="https://www.facebook.com/mark.stybaniewicz">
+                                    <span class="avatar"><i class="fa fa-facebook-official"></i></span>
+                                    <span class="message customfontexo">Facebook</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="message-preview">
+                                    <span class="avatar"><i class="fa fa-envelope"></i></span>
+                                    <span class="message customfontexo">Email: mark.sty94@gmail.com</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="divider-vertical"></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="customfontexo">Videogame Global Sales Dashboard <small>(in millions of units)</small></h1>
+                    <div class="alert alert-dismissable alert-warning">
+                        <button data-dismiss="alert" class="close" type="button">&times;</button>
+                        <p class="customfontexo">Welcome to the my dashboard! You can find data about Publishers and Games Sales from 1994 to 2016
+                        <br />
+                        Please note that the dataset is NOT UP TO DATE and the sales are representing old numbers. The real results are completely different <br>
+                            THIS IS ONLY A DEMO SITE!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title customfontWendy"><i class="fa fa-bar-chart-o"></i> Genres</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="genre-select" data-step="5" data-intro="Select Genre" style="font-weight: normal"
+                            data-position="right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title customfontWendy"><i class="fa fa-bar-chart-o"></i> Platforms</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="platform-select" data-step="5" data-intro="Select Platform" style="font-weight: normal"
+                            data-position="right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title customfontWendy"><i class="fa fa-bar-chart-o"></i> Year of Release</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="year-select" data-step="5" data-intro="Select Year" style="font-weight: normal"
+                            data-position="right"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title customfontWendy"><i class="fa fa-rss"></i> All Platforms</h3>
+                        </div>
+                        <div class="panel-body " id="rating-chart">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title customfontWendy"><i class="fa fa-bar-chart-o"></i> Global Sales(in millions of unit) </h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="globalsales-number" class="text-center"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title customfontWendy"><i class="fa fa-bar-chart-o"></i>Games sold per year</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="time-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title customfontWendy"><i class="fa fa-bar-chart-o"></i>Top 20 Publishers</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="sales-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title customfontWendy"><i class="fa fa-bar-chart-o"></i>Top 20 Games</h3>
+                        </div>
+                        <div class="panel-body">
+                            <div id="developer-sales"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#wrapper -->
+<script src="{{ url_for ('static', filename='lib/js/jquery.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/crossfilter.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/d3.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/dc.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/queue.js')}}"></script>
+<script src="{{ url_for ('static', filename='lib/js/keen.min.js')}}"></script>
+<script src="{{ url_for ('static', filename='js/graph.js')}}"></script>
+</body>
+</html>

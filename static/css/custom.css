@@ -1,0 +1,38 @@
+html{
+   font-family: 'Exo', sans-serif;
+}
+.customfontexo{
+  font-family: 'Exo', sans-serif;
+}
+.customfontWendy{
+   font-family: 'Wendy One', sans-serif;
+}
+text{
+   font-family: 'Wendy One', sans-serif;
+
+}
+.pie-slice{
+   cursor: pointer;
+}
+rect{
+   cursor: pointer;
+}
+.dc-select-menu{
+   color:black;
+   cursor: pointer;
+   font-family: 'Wendy One', sans-serif;
+}
+.number-display{
+   cursor: pointer;
+   font-family: 'Wendy One', sans-serif;
+   font-size: 50px;
+}
+#sales-chart svg g title{
+   color:white;
+}
+#developer-sales svg g title{
+   color:white;
+}
+.selected{
+   fill:blue;
+}
