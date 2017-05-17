@@ -7,13 +7,15 @@ import os
 
 app = Flask(__name__)
 
+MONGODB_URI = os.getenv('MONGODB_URI')
+DBS_NAME = os.getenv('MONGO_DB_NAME','videogameSales')
+COLLECTION_NAME = os.getenv('MONGO_COLLECTION_NAME','ModifiedProjects')
+
 MONGOD_URI = os.getenv('MONGOD_URI')
 
-MONGODB_HOST = 'localhost'
-MONGODB_PORT = 27017
+#MONGODB_HOST = 'localhost'
+#MONGODB_PORT = 27017
 
-DBS_NAME = os.getenv('MONGO_DB_NAME', 'videogameSales')
-COLLECTION_NAME = os.getenv('MONGO_COLLECTION', 'ModifiedProjects')
 FIELDS = {'Name': True, 'Platform': True, 'Year_of_Release': True, 'Genre': True, 'Publisher': True,
           'Global_Sales': True, 'Developer': True,'_id': False}
 
@@ -33,7 +35,8 @@ def portfolio():
 
 @app.route("/videogamesales/ModifiedProjects")
 def videogamesales_projects():
-    connection = MongoClient(MONGODB_HOST, MONGODB_PORT)
+    connection = MongoClient(MONGODB_URI)
+    #connection = MongoClient(MONGODB_HOST, MONGODB_PORT)
     collection = connection[DBS_NAME][COLLECTION_NAME]
     projects = collection.find(projection=FIELDS, limit=16719)
     json_projects = list(projects)

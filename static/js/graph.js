@@ -17,6 +17,7 @@ function makeGraphs(error, projectsJson) {
     //Create a Crossfilter instance
     var ndx = crossfilter(videogameSales);
 
+
     //Define Dimensions
     var getName = ndx.dimension(function (d) {
         return d["Name"] ? d["Name"] : "";
@@ -28,6 +29,7 @@ function makeGraphs(error, projectsJson) {
     var getYear = ndx.dimension(function (d) {
         return d["Year_of_Release"] ? d["Year_of_Release"] : 0;
     });
+    console.log(getPlatform);
     var getGenre = ndx.dimension(function (d) {
         return d["Genre"] ? d["Genre"] : "";
     });
