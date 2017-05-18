@@ -36,3 +36,6 @@ rect{
 .selected{
    fill:blue;
 }
+#time-chart{
+   background-color: white;
+}
