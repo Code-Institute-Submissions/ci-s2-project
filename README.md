@@ -1,7 +1,7 @@
 # Code Institute Stream 2 Interactive Data Visualisation of Videogame Global Sales
 
 
-##Data source
+## Data source
 
 The data for this project was downloaded as csv and MongoDB was used to host them as json formatted files.
 ## Framework
